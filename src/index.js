@@ -2,6 +2,9 @@ import {fetchWithTimeout, fetchMovies, fetchBooks, asyncFetchBooks, asyncFetchMo
 
 const movies = require('./data/movies.json');
 
+const timer1 = setTimeout(() => {console.log("timer 1 has finished")}, 3000);
+const timer2 = setTimeout(() => {console.log("timer 2 has finished"); clearTimeout(timer1)}, 2000);
+
 const getBooksAndMovies = () => {
     return Promise.all([fetchBooks(), fetchMovies()])
         .then(([books, movies]) => ({
