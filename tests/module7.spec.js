@@ -594,7 +594,7 @@ describe('Module 7', () => {
       walk.findNodeAt(res, null, null, (nodeType, node) => {
         if (
           nodeType === 'CallExpression' &&
-          _.get(node, 'callee.object.callee.object.callee.name', '') ===
+          _.get(node, 'callee.object.callee.name', '') ===
             'getBooksOrMoviesAsync'
         ) {
           parent.node = node;
